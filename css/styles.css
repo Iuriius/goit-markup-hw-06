@@ -433,7 +433,7 @@ section {
     color: var(--tertiary-color);
     background-color: rgba(33, 150, 243, 0.9);
     font-size: 18px;
-    line-height: 28px;
+    line-height: 1.55;
     padding: 63px 24px;
 }
 
@@ -678,7 +678,8 @@ footer {
     top: 50%;
     left: 50%;
     width: 528px;
-    height: 528px;
+    height: 581px;
+    padding: 40px;
     transform: translate(-50%, -50%);
     background-color: var(--tertiary-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -706,13 +707,12 @@ footer {
 }
 
 .subscribe {
-    display: flex;
-    flex-direction: column;
-    margin-left: 93px;
+    margin-left: auto;
 }
 
 .subscribe-field {
     margin-top: 16px;
+    margin-right: 10px;
     width: 358px;
     height: 50px;
     border-radius: 4px;
@@ -730,7 +730,7 @@ footer {
     height: 50px;
     font-weight: 700;
     font-size: 16px;
-    line-height: 30px;
+    line-height: 1.87;
     color: var(--tertiary-color);
     display: inline-flex;
     justify-content: center;
@@ -741,6 +741,7 @@ footer {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     border: none;
+    cursor: pointer;
 
     transition-property: background-color;
     transition-duration: 250ms;
@@ -752,11 +753,7 @@ footer {
     background-color: var(--button-accent-color);
 }
 
-.modal-styles {
-    padding: 40px;
-    width: 100%;
-    height: 100%;
-}
+.modal-styles {}
 
 input,
 textarea {
@@ -776,7 +773,7 @@ label {
 .modal-title {
     font-weight: 700;
     font-size: 20px;
-    line-height: 23px;
+    line-height: 1.15;
     display: flex;
     justify-content: center;
     margin-bottom: 12px;
@@ -784,8 +781,11 @@ label {
 
 .modal-component {
     position: relative;
-    height: 40px;
     margin-top: 4px;
+}
+
+.modal-component:not(:last-child) {
+    margin-bottom: 10px;
 }
 
 .input-area {
@@ -795,7 +795,7 @@ label {
     border-radius: 4px;
     color: var(--secondary-color);
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.16;
     letter-spacing: 0.01em;
 
     transition-property: border;
@@ -803,7 +803,8 @@ label {
     transition-timing-function: var(--cubic);
 }
 
-.input-area:focus {
+.input-area:focus,
+.input-area:hover {
     border: 1px solid var(--accent-color);
     outline: none;
 }
@@ -812,8 +813,13 @@ label {
     fill: var(--accent-color);
 }
 
+/* .input-area:required {
+    border-color: #f44336;
+} */
+
 .input-text {
     width: 100%;
+    height: 120px;
     padding-left: 15px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
@@ -821,7 +827,7 @@ label {
     outline: none;
     color: var(--secondary-color);
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.16;
     letter-spacing: 0.01em;
 
     transition-property: border;
@@ -829,7 +835,8 @@ label {
     transition-timing-function: var(--cubic);
 }
 
-.input-text:focus {
+.input-text:focus,
+.input-text:hover {
     border: 1px solid var(--accent-color);
 }
 
@@ -848,27 +855,26 @@ label {
 
 .modal-policy {
     position: relative;
-    margin-top: 60px;
+    margin-top: 20px;
     font-weight: 400;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 1.7;
     letter-spacing: 0.03em;
     color: var(--secondary-color);
     text-align: center;
 
 }
 
-.modal-submit {
-    text-align: center;
-    padding-top: 30px;
-}
-
 .modal-submit-btn {
+    display: block;
+    margin: 0 auto;
+
+    margin-top: 30px;
     width: 200px;
     height: 50px;
     font-weight: 700;
     font-size: 16px;
-    line-height: 30px;
+    line-height: 1.87;
     letter-spacing: 0.06em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     color: var(--tertiary-color);
@@ -885,4 +891,48 @@ label {
 .modal-submit-btn:hover,
 .modal-submit-btn:focus {
     background-color: var(--button-accent-color);
+}
+
+.policy-link {
+    text-underline-offset: 3px;
+    color: var(--accent-color);
+}
+
+.policy-line {
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    user-select: none;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: var(--cubic);
+}
+
+.checkbox {
+    opacity: 0;
+}
+
+.policy-line:hover {
+    color: var(--accent-color);
+}
+
+.unchecked,
+.checked {
+    position: absolute;
+    display: flex;
+    top: 5px;
+    left: 18px;
+}
+
+.checked {
+    opacity: 0;
+
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: var(--cubic);
+}
+
+.checkbox:checked~.checkbox-custom .checked {
+    opacity: 1;
 }

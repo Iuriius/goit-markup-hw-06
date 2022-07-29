@@ -405,7 +405,8 @@
                 <p class="joinus">Підпишіться на розсилку</p>
                 <form autocomplete="on">
                     <label>
-                        <input class="subscribe-field" type="email" name="email" id="user_email" placeholder="E-mail" />
+                        <input class="subscribe-field" type="email" name="email" id="user_email" placeholder="E-mail"
+                            required />
                     </label>
                     <button class="subscribe-btn" type="submit">Підписатися
                         <svg width="24" height="24">
@@ -426,47 +427,51 @@
             </button>
 
             <form class="form" name="signup_form" autocomplete="on" novalidate>
-                <div class="modal-styles" role="group" arial-labelby="Форма зворотнього зв'язку">
-                    <p class="modal-title">Залиште свої дані, ми вам передзвонимо</p>
-                    <label>Ім'я</label>
-                    <div class="modal-component">
-                        <input class="input-area" type="text" name="username" autofocus />
-                        <svg class="modal-icon" class="modal-icon" width="12" height="12">
-                            <use href="./images/icons.svg#person"></use>
-                        </svg>
-                    </div>
-                    <label>Телефон</label>
-                    <div class="modal-component">
-                        <input class="input-area" type="tel" name="phone_number" />
-                        <svg class="modal-icon" width="13" height="13">
-                            <use href="./images/icons.svg#telephone"></use>
-                        </svg>
-                    </div>
-                    <label>Пошта</label>
-                    <div class="modal-component">
-                        <input class="input-area" type="email" name="email" />
-                        <svg class="modal-icon" width="15" height="12">
-                            <use href="./images/icons.svg#envelope2"></use>
-                        </svg>
-                    </div>
-                    <label> Коментар</label>
-                    <div class="modal-component">
-                        <textarea class="input-text" name="feedback" rows="5" placeholder="Введіть текст"></textarea>
-                    </div>
-                    <div class="modal-policy">
-                        <label>
-                            <input type="checkbox" /> <span>Погоджуюся з розсилкою та приймаю</span>
-                            <span><a href="#">Умови договору</a></span>
-                        </label>
-                    </div>
-                    <div class="modal-submit">
-                        <button class="modal-submit-btn" type="submit">Відправити</button>
-                    </div>
+                <strong class="modal-title">Залиште свої дані, ми вам передзвонимо</strong>
+                <label>Ім'я</label>
+                <div class="modal-component">
+                    <input class="input-area" type="text" name="username" autofocus required />
+                    <svg class="modal-icon" width="12" height="12">
+                        <use href="./images/icons.svg#person"></use>
+                    </svg>
                 </div>
+                <label>Телефон</label>
+                <div class="modal-component">
+                    <input class="input-area" type="tel" name="phone_number" required />
+                    <svg class="modal-icon" width="13" height="13">
+                        <use href="./images/icons.svg#telephone"></use>
+                    </svg>
+                </div>
+                <label>Пошта</label>
+                <div class="modal-component">
+                    <input class="input-area" type="email" name="email" required />
+                    <svg class="modal-icon" width="15" height="12">
+                        <use href="./images/icons.svg#envelope2"></use>
+                    </svg>
+                </div>
+                <label> Коментар</label>
+                <div class="modal-component">
+                    <textarea class="input-text" name="feedback" rows="5" placeholder="Введіть текст"></textarea>
+                </div>
+                <div class="modal-policy">
+                    <label class="policy-line">
+                        <input class="checkbox" type="checkbox" required />
+                        <span class="checkbox-custom">
+                            <svg class="unchecked" width="16" height="15">
+                                <use href="./images/icons.svg#checkbox-unchecked"></use>
+                            </svg>
+                            <svg class="checked" width="16" height="15">
+                                <use href="./images/icons.svg#checkbox-checked"></use>
+                            </svg>
+                        </span>
+                        <span>Погоджуюся з розсилкою та приймаю</span>
+                        <span><a class="policy-link" href="#">Умови договору</a></span>
+                    </label>
+                </div>
+                <button class="modal-submit-btn" type="submit">Відправити</button>
             </form>
         </div>
     </div>
-
     <script src="./js/modal.js"></script>
 </body>
 
