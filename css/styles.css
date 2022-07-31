@@ -661,7 +661,9 @@ footer {
     pointer-events: initial;
     visibility: visible;
 
-    transition: opacity 250ms var(--cubic);
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: var(--cubic);
 }
 
 .backdrop.is-hidden {
@@ -686,8 +688,11 @@ footer {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     opacity: 1;
+    pointer-events: initial;
 
-    transition: opacity 250ms var(--cubic);
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: var(--cubic);
 }
 
 .modal-btn-close {
@@ -698,8 +703,11 @@ footer {
     border: none;
     background: transparent;
     cursor: pointer;
+    pointer-events: initial;
 
-    transition: fill 250ms var(--cubic);
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: var(--cubic);
 }
 
 .modal-btn-close:hover,
@@ -753,8 +761,6 @@ footer {
     background-color: var(--button-accent-color);
 }
 
-.modal-styles {}
-
 input,
 textarea {
     padding: 8px;
@@ -785,6 +791,7 @@ label {
 }
 
 .input-area {
+    margin-top: 4px;
     width: 100%;
     height: 40px;
     padding-left: 40px;
@@ -807,10 +814,6 @@ label {
 .input-area:focus~.modal-icon {
     fill: var(--accent-color);
 }
-
-/* .input-area:required {
-    border-color: #f44336;
-} */
 
 .input-text {
     width: 100%;
@@ -836,7 +839,7 @@ label {
 
 .modal-icon {
     position: absolute;
-    top: 29px;
+    top: 34px;
     left: 15px;
     padding: 0;
     color: inherit;
